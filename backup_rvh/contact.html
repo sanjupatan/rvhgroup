@@ -165,7 +165,18 @@
       color: white;
       transform: translateY(-3px);
     }
+.map-container {
+      width: 100%;
+      height: 600px;
+      border-radius: 10px;
+      overflow: hidden;
+    }
 
+    iframe {
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
 
     .social {
       text-align: center;
@@ -183,13 +194,20 @@
     }
 
     iframe {
-      width: 100%;
-      height: 300px;
+      padding-left: 100px;
+      padding-right: 100px;
+      height: 600px;
       margin-bottom: 40px;
       border: none;
       border-radius: 12px;
     }
 
+    .htag{
+      text-align: center;
+     
+      color: #003b7a;
+      font-size: 28px;
+    }
   </style>
 </head>
 <body>
@@ -251,16 +269,27 @@
         </div>
         <div class="form-group">
           <label>Message</label>
+
           <textarea required></textarea>
         </div>
         <button type="submit">Send Message</button>
       </form>
     </section>
 
-    
-    
-
   </div>
+  <div class="map-container">
+    
+<h2 class="htag">Our Location</h2><br>
+  
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3805.3797554837925!2d78.3900813749877!3d17
+    .489376283415265!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb918dab342375%3A0x180a04af0c47f594!
+    2sManjeera%20Trinity%20Corporate!5e0!3m2!1sen!2sin!4v1762510201366!5m2!1sen!2sin" 
+     style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+  </iframe>
+      
+  </div><br><br>
+
+    
 
   <footer>
     <div class="footer">
