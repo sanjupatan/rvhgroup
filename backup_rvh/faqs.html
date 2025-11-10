@@ -9,7 +9,9 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <style>
-  /* FAQ SECTION */
+  body{
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  }
 .faq-section {
   margin: 60px auto;
   max-width: 900px;
@@ -23,12 +25,10 @@
   font-weight: 700;
 }
 
-/* Container */
 .faq-container {
   text-align: left;
 }
 
-/* FAQ CARD */
 .faq-item {
   background: white;
   border-radius: 10px;
@@ -53,7 +53,6 @@
   display: none;
 }
 
-/* Question */
 .faq-question {
   display: block;
   padding: 18px 0;
@@ -64,7 +63,6 @@
   font-size: 17px;
 }
 
-/* + to Arrow Animation */
 .faq-question::after {
   content: "➕";
   position: absolute;
@@ -78,7 +76,6 @@
   transform: rotate(180deg);
 }
 
-/* Answer */
 .faq-answer {
   max-height: 0;
   overflow: hidden;
@@ -103,15 +100,15 @@
 <body>
 
   <nav class="navbar">
-  <div class="navbar-logo">
-     RVH Group
-  </div>
+    <div class="navbar-logo">
+       RVH Group
+    </div>
 
-  <div class="hamburger" id="hamburger">
-    <i class="fas fa-bars"></i>
-  </div>
-  <div class="navbar-menu" id="navbarMenu">
-    <a href="index.html">Home</a> 
+    <div class="hamburger" id="hamburger">
+      <i class="fas fa-bars"></i>
+    </div>
+    <div class="navbar-menu" id="navbarMenu">
+      <a href="index.html">Home</a> 
     <a href="about.html">About</a>
     <a href="career.html">Careers</a> 
     <a href="companies.html">Companies</a> 
@@ -132,11 +129,11 @@
       <a href="companies.html">Companies</a>
       <a href="contact.html">Contact</a>
       <a href="faqs.html">FAQ's</a>
+      </div>
     </div>
-  </div>
 
-  <div class="overlay" id="overlay"></div>
-</nav>
+    <div class="overlay" id="overlay"></div>
+  </nav>
 
 
 
@@ -244,26 +241,25 @@
   </footer>
 
   <script>
+const hamburgerIcon = document.getElementById("hamburger");
+    const mobileMenu = document.getElementById("mobileMenu");
+    const closeMenu = document.getElementById("closeMenu");
+    const overlay = document.getElementById("overlay");
 
-  const hamburgerIcon = document.getElementById("hamburger");
-  const mobileMenu = document.getElementById("mobileMenu");
-  const closeMenu = document.getElementById("closeMenu");
-  const overlay = document.getElementById("overlay");
+    hamburgerIcon.addEventListener("click", () => {
+      mobileMenu.classList.add("active");
+      overlay.classList.add("active");
+    });
 
-  hamburgerIcon.addEventListener("click", () => {
-    mobileMenu.classList.add("active");
-    overlay.classList.add("active");
-  });
+    closeMenu.addEventListener("click", () => {
+      mobileMenu.classList.remove("active");
+      overlay.classList.remove("active");
+    });
 
-  closeMenu.addEventListener("click", () => {
-    mobileMenu.classList.remove("active");
-    overlay.classList.remove("active");
-  });
-
-  overlay.addEventListener("click", () => {
-    mobileMenu.classList.remove("active");
-    overlay.classList.remove("active");
-  });
+    overlay.addEventListener("click", () => {
+      mobileMenu.classList.remove("active");
+      overlay.classList.remove("active");
+    });
 
    </script>
 

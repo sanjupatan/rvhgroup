@@ -8,6 +8,42 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <style>
+
+  .background-company {
+  position: relative;
+  background: url('companybg3.png') no-repeat center center;
+  background-size: cover;
+  width: 100vw;
+  min-height:600px;
+  overflow: hidden;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.background-company  h2 {
+  
+  margin: 0 0 1rem 0;
+  font-size: 2rem;
+}
+.company-title {
+ padding-top: 0%;
+ padding-left: 25px;
+}
+
+.background-company  p {
+  padding-left: 30px;
+  font-size: 1.2rem;
+  margin: 0 0 1rem 0;
+  line-height: 1.5;
+  max-width: 50%;
+}
+.future-logo{
+  float: right;
+  size: 14px;
+}
     :root{
       --brand:#0055ff;
       --bg:#f7f9fc;
@@ -20,7 +56,7 @@
       font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, Arial;
     }
     *{box-sizing:border-box;margin:0;padding:0}
-    body{background:var(--bg);color:#0f1724;-webkit-font-smoothing:antialiased;line-height:1.5}
+    body{background:var(--bg);color:#0f1724;overflow-x: hidden;-webkit-font-smoothing:antialiased;line-height:1.5}
     a{color:inherit;text-decoration:none}
 
     .container{max-width:var(--container);margin:0 auto;padding:0 20px}
@@ -40,19 +76,96 @@
     .btn{display:inline-flex;align-items:center;gap:8px;padding:10px 14px;border-radius:10px;background:var(--brand);color:white;border:none;cursor:pointer;font-weight:600}
     .btn.secondary{background:transparent;color:var(--brand);border:1.5px solid rgba(11,92,255,0.12)}
 
-    .cards-wrap{margin-top:30px}
-    .cards-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-    .company-card{
-      background:var(--card);padding:18px;border-radius:12px;box-shadow:var(--shadow);border:1px solid rgba(15,23,36,0.03);
-      transition:transform .22s ease,box-shadow .22s ease;
-      display:flex;flex-direction:column;gap:12px;height:100%;
-    }
-    .company-card:hover{transform:translateY(-6px);box-shadow:0 20px 40px rgba(12,18,36,0.08)}
-    .company-logo{width:56px;height:56px;border-radius:10px;background:linear-gradient(90deg,rgba(0,85,255,0.08),rgba(0,85,255,0.02));display:flex;align-items:center;justify-content:center;font-weight:700;color:var(--brand);font-size:18px}
-    .company-title{font-weight:700}
-    .company-desc{color:var(--muted);font-size:14px;flex:1}
-    .company-meta{display:flex;justify-content:space-between;align-items:center;margin-top:8px}
-    .small-btn{padding:8px 10px;border-radius:8px;border:1px solid rgba(11,92,255,0.12);background:transparent;color:var(--brand);font-weight:700;cursor:pointer}
+    .cards-wrap { margin-top: 30px; }
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 18px;
+}
+
+.company-card {
+  background: #fff;
+  padding: 20px;
+  border-radius: 14px;
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  gap: 20px;
+  border: 1px solid rgba(0,0,0,0.06);
+  box-shadow: 0 4px 14px rgba(0,0,0,0.06);
+  transition: 0.25s ease;
+}
+
+.company-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 28px rgba(0,0,0,0.12);
+}
+
+.left-side {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.company-title {
+  font-weight: 700;
+  font-size: 22px;
+  padding-left: 45px;
+ 
+}
+
+.company-desc {
+  font-size: 16px;
+  color: #6b7280;
+   max-width: 85%;
+   padding-left: 50px;
+}
+
+.right-side {
+  width: 190px;
+  padding-right: 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  text-align: center;
+  gap: 8px;
+}
+
+.company-logo {
+  width: 220px;
+  height: 150px;
+  padding-right: 30px;
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+ 
+}
+
+.brand-name {
+  font-size: 13px;
+  font-weight: 600;
+  color: #0055ff;
+}
+
+.small-btn {
+  padding: 7px 10px;
+  border-radius: 8px;
+  border: 1px solid rgba(0, 85, 255, 0.3);
+  background: transparent;
+  color: white;
+  background-color: #0055ff;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.small-btn:hover {
+  background: white;
+  color: #0055ff;
+}
 
     .industries{margin-top:36px;padding:22px 18px;background:linear-gradient(180deg,rgba(255,255,255,0.98),rgba(250,250,253,0.98));border-radius:12px;border:1px solid rgba(15,23,36,0.04)}
     .industries h3{margin-bottom:12px}
@@ -75,7 +188,7 @@
     .cta-strip p{margin:6px 0;color:var(--muted)}
 
  
-    @media (max-width:1100px){.cards-grid{grid-template-columns:repeat(2,1fr)}.synergy{grid-template-columns:1fr}}
+    @media (max-width:1100px){.cards-grid{grid-template-columns:repeat(1,1fr)}.synergy{grid-template-columns:1fr}}
     @media (max-width:700px){
       .navbar-menu{display:none}
       .hamburger{display:block}
@@ -122,7 +235,19 @@
 
   <div class="overlay" id="overlay"></div>
 </nav>
-
+  <div class="container-company-inner">
+      <div class="company-left">
+        <div class="background-company">
+          <h2 class="company-title">Company at RVH Group</h2>
+          <p class="company-lead">
+            At RVH Group, we believe talent is the foundation of every successful company. As a growing Group of Companies operating across multiple industries, we offer diverse career opportunities that enable individuals to learn, lead, and grow within a dynamic ecosystem.
+          </p>
+          <p class="company-sub">
+            Whether you aim to excel in Technology, HR, Marketing, Finance, or Corporate Operations — RVH Group provides a platform where your skills create impact.
+          </p><br>
+          
+        </div>
+      </div>
   <header class="hero">
     <div class="container">
       <div class="hero-grid">
@@ -165,107 +290,104 @@
       </div>
 
       <div class="cards-wrap">
-        <div class="cards-grid">
-          <div class="company-card">
-            <div style="display:flex;gap:12px;align-items:center">
-              <div class="company-logo">IT</div>
-              <div>
-                <div class="company-title">RVH IT Solutions</div>
-                <div class="company-desc">Custom software, cloud services, digital transformation and secure IT platforms for enterprises.</div>
-              </div>
-            </div>
-            <div class="company-meta">
-              <div style="color:var(--muted);font-size:13px">Bengaluru • Full-stack</div>
-              <button class="small-btn" onclick="document.location.href='companies/rvh-it.html'">Explore</button>
-            </div>
-          </div>
+  <div class="cards-grid">
 
-          <div class="company-card">
-            <div style="display:flex;gap:12px;align-items:center">
-              <div class="company-logo">DIG</div>
-              <div>
-                <div class="company-title">RVH Digital</div>
-                <div class="company-desc">Performance marketing, SEO, brand strategy and lead generation services that drive growth.</div>
-              </div>
-            </div>
-            <div class="company-meta">
-              <div style="color:var(--muted);font-size:13px">Mumbai • Marketing</div>
-              <button class="small-btn" onclick="document.location.href='companies/rvh-digital.html'">Explore</button>
-            </div>
-          </div>
-
-          <div class="company-card">
-            <div style="display:flex;gap:12px;align-items:center">
-              <div class="company-logo">BPO</div>
-              <div>
-                <div class="company-title">RVH BPO Services</div>
-                <div class="company-desc">24/7 customer support, back-office operations and secure data services.</div>
-              </div>
-            </div>
-            <div class="company-meta">
-              <div style="color:var(--muted);font-size:13px">Hyderabad • Operations</div>
-              <button class="small-btn" onclick="document.location.href='companies/rvh-bpo.html'">Explore</button>
-            </div>
-          </div>
-
-          <div class="company-card">
-            <div style="display:flex;gap:12px;align-items:center">
-              <div class="company-logo">RE</div>
-              <div>
-                <div class="company-title">RVH Real Estate</div>
-                <div class="company-desc">Residential & commercial property development, smart living concepts and property management.</div>
-              </div>
-            </div>
-            <div class="company-meta">
-              <div style="color:var(--muted);font-size:13px">Mumbai • Real Estate</div>
-              <button class="small-btn" onclick="document.location.href='companies/rvh-realestate.html'">Explore</button>
-            </div>
-          </div>
-
-          <div class="company-card">
-            <div style="display:flex;gap:12px;align-items:center">
-              <div class="company-logo">CON</div>
-              <div>
-                <div class="company-title">RVH Construction</div>
-                <div class="company-desc">Civil & infrastructure development, renovations, sustainable construction with ESG focus.</div>
-              </div>
-            </div>
-            <div class="company-meta">
-              <div style="color:var(--muted);font-size:13px">Pune • Construction</div>
-              <button class="small-btn" onclick="document.location.href='companies/rvh-construction.html'">Explore</button>
-            </div>
-          </div>
-
-          <div class="company-card">
-            <div style="display:flex;gap:12px;align-items:center">
-              <div class="company-logo">INT</div>
-              <div>
-                <div class="company-title">RVH Interior Designs</div>
-                <div class="company-desc">Turnkey interior design services focused on modern, sustainable aesthetics and workmanship.</div>
-              </div>
-            </div>
-            <div class="company-meta">
-              <div style="color:var(--muted);font-size:13px">Bengaluru • Interiors</div>
-              <button class="small-btn" onclick="document.location.href='companies/rvh-interiors.html'">Explore</button>
-            </div>
-          </div>
-
-          <div class="company-card">
-            <div style="display:flex;gap:12px;align-items:center">
-              <div class="company-logo">TRN</div>
-              <div>
-                <div class="company-title">RVH Training</div>
-                <div class="company-desc">Corporate learning, upskilling, internship programs and role-based training aligned to industry needs.</div>
-              </div>
-            </div>
-            <div class="company-meta">
-              <div style="color:var(--muted);font-size:13px">Remote • Training</div>
-              <button class="small-btn" onclick="document.location.href='companies/rvh-training.html'">Explore</button>
-            </div>
-          </div>
-
-        </div>
+    <div class="company-card">
+      <div class="left-side">
+        <div class="company-title">Information Technology</div>
+        <div class="company-desc">Information Technology has become an integral part of modern life. From mobile apps and cloud platforms to digital banking and artificial intelligence, IT shapes the way we work, learn, communicate, and interact. It supports industries like healthcare, education, finance, manufacturing, government, retail, and entertainment by enabling digital transformation and smarter operations.</div>
       </div>
+      <div class="right-side">
+        <img class="company-logo" src="logo.png">
+        
+        <a href="https://www.futureinvo.com/" target="_blank">
+  <button class="small-btn">Visit Website</button>
+</a>
+
+      </div>
+    </div>
+
+    <div class="company-card">
+      <div class="left-side">
+        <div class="company-title">Tech Support</div>
+        <div class="company-desc">Our Tech Support Services are designed to provide quick, reliable, and expert assistance to keep your technology running without interruption. From diagnosing technical issues to offering step-by-step guidance, our team ensures timely support for computers, software, networks, and digital applications. We provide remote and on-site support with proactive monitoring to prevent problems before they occur. Our goal is to improve system performance, minimize downtime, and deliver a smooth technology experience for users and organizations.</div>
+      </div>
+      <div class="right-side">
+        <div class="company-logo">TS</div>
+        <div class="brand-name">Futronix</div>
+        <button class="small-btn" onclick="document.location.href='companies/rvh-techsupport.html'">Visit Website</button>
+      </div>
+    </div>
+
+    <div class="company-card">
+      <div class="left-side">
+        <div class="company-title">Digital Marketing</div>
+        <div class="company-desc">Digital Marketing is a strategic approach to promoting brands, products, and services through online platforms. It involves using tools like social media, search engines, email campaigns, and content marketing to reach the right audience at the right time. With data-driven strategies and creative campaigns, digital marketing helps businesses build brand awareness, attract potential customers, and drive measurable growth.</div>
+      </div>
+      <div class="right-side">
+        <div class="company-logo"></div>
+        <div class="brand-name">skill shketra</div>
+        <button class="small-btn" onclick="document.location.href='companies/rvh-digital.html'">Visit Website</button>
+      </div>
+    </div>
+    
+    <div class="company-card">
+      <div class="left-side">
+        <div class="company-title">Training </div>
+        <div class="company-desc">Training plays a vital role in enhancing knowledge, improving skills, and shaping individuals for professional growth. Our Training & Skill Development programs are designed to provide practical, industry-focused learning that empowers participants to excel in their careers. We offer tailored training modules that combine theoretical understanding with real-world application, ensuring learners gain hands-on experience and confidence.</div>
+      </div>
+      <div class="right-side">
+        <div class="company-logo">TR</div>
+        <div class="brand-name">Gyantrix Academy</div>
+        <button class="small-btn" onclick="document.location.href='companies/rvh-training.html'">Visit Website</button>
+      </div>
+    </div>
+
+    <div class="company-card">
+      <div class="left-side">
+        <div class="company-title">Human Resources</div>
+        <div class="company-desc">
+Human Resources (HR) is the core function that manages and supports an organization's most valuable asset — its people. HR focuses on recruitment, employee welfare, performance management, training, and creating a positive work environment that encourages growth and productivity. A strong HR team ensures that the right talent is hired, nurtured, and retained through effective policies, employee engagement, and career development initiatives</div>
+      </div>
+      <div class="right-side">
+        <div class="company-logo">HR</div>
+        <div class="brand-name">RVH HR</div>
+        
+      </div>
+    </div>
+
+    <div class="company-card">
+      <div class="left-side">
+        <div class="company-title">Finance & Registration</div>
+        <div class="company-desc">
+Finance and Registration services play a crucial role in helping individuals and businesses establish a strong legal and financial foundation. These services include business registration, financial documentation, compliance support, tax filing, and statutory registrations required to operate smoothly and legally. With expert guidance, businesses can avoid legal complications, maintain financial transparency, and meet regulatory requirements on time.</div>
+      </div>
+      <div class="right-side">
+        <div class="company-logo">FR</div>
+        <div class="brand-name">RVH Finance</div>
+        <button class="small-btn" onclick="document.location.href='companies/rvh-finance.html'">Visit Website</button>
+      </div>
+    </div>
+
+    <div class="company-card">
+      <div class="left-side">
+        <div class="company-title">Others</div>
+        <div class="company-desc">
+Marketing is the strategic process of understanding customer needs, creating value, and building strong brand connections to drive business growth. It involves researching markets, identifying target audiences, developing compelling messages, and promoting products or services through the right channels. Effective marketing not only increases brand visibility but also builds trust, drives customer engagement, and enhances sales.</div>
+      </div>
+      <div class="right-side">
+        <div class="company-logo"></div>
+        <div class="brand-name">RVH Marketing Services</div><br>
+        <div class="brand-name">RVH Interior Services</div><br>
+        <div class="brand-name">RVH Construction Services</div>
+        
+      </div>
+    </div>
+
+
+  </div>
+</div>
+
 
       <div class="industries" style="margin-top:30px">
         <h3>Industries & Verticals</h3>
@@ -387,7 +509,6 @@
     overlay.classList.remove("active");
   });
 
-    // mobile menu toggle (keeps behavior consistent with your other pages)
     const hamburger = document.getElementById('hamburger');
     const navMenu = document.querySelector('.navbar-menu');
     hamburger && hamburger.addEventListener('click', () => {
